@@ -5,7 +5,6 @@
 //  Created by Илья Сутормин on 28.09.2022.
 //
 
-import Foundation
 import CoreData
 
 class Animal: NSManagedObject {
@@ -16,7 +15,7 @@ class Animal: NSManagedObject {
     @NSManaged var geoRange: String?
     @NSManaged var diet: String?
     @NSManaged var imageLink: String?
-
+    
     func from(_ animal: AnimalsModel) {
         name = animal.name
         latinName = animal.latinName
