@@ -31,13 +31,10 @@ class Network {
                     if let entity = NSEntityDescription.insertNewObject(forEntityName: "Animal", into: context!) as? Animal {
                         entity.from(models)
                     }
-                    
                 } catch {
                     print(error)
                 }
             }
-            
-            
         }.resume()
         
     }

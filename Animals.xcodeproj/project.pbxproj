@@ -20,6 +20,7 @@
 		350205E828E42462005B77FA /* AnimalDataStack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 350205E628E42462005B77FA /* AnimalDataStack.xcdatamodeld */; };
 		350205F228E425B7005B77FA /* AnimalCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350205F128E425B7005B77FA /* AnimalCoreData.swift */; };
 		3502060428E44666005B77FA /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502060328E44666005B77FA /* Animal.swift */; };
+		3560446728E4971800126372 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560446628E4971800126372 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		350205E728E42462005B77FA /* AnimalDataStack.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnimalDataStack.xcdatamodel; sourceTree = "<group>"; };
 		350205F128E425B7005B77FA /* AnimalCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCoreData.swift; sourceTree = "<group>"; };
 		3502060328E44666005B77FA /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		3560446628E4971800126372 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		6234873817D55F779FE659FF /* Pods-Animals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Animals.release.xcconfig"; path = "Target Support Files/Pods-Animals/Pods-Animals.release.xcconfig"; sourceTree = "<group>"; };
 		A92A83ACE08B69F126C4C2B5 /* Pods_Animals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Animals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1661BDCFB5E5DB6F997C0AE /* Pods-Animals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Animals.debug.xcconfig"; path = "Target Support Files/Pods-Animals/Pods-Animals.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,21 +77,62 @@
 		350205C928E3E96B005B77FA /* Animals */ = {
 			isa = PBXGroup;
 			children = (
-				350205CA28E3E96B005B77FA /* AppDelegate.swift */,
-				350205F128E425B7005B77FA /* AnimalCoreData.swift */,
-				350205CC28E3E96B005B77FA /* SceneDelegate.swift */,
-				350205CE28E3E96B005B77FA /* ViewController.swift */,
-				3502060328E44666005B77FA /* Animal.swift */,
-				350205E028E3ECB2005B77FA /* AnimalsModel.swift */,
-				350205D028E3E96B005B77FA /* Main.storyboard */,
-				350205E428E42435005B77FA /* TableViewController.swift */,
-				350205E628E42462005B77FA /* AnimalDataStack.xcdatamodeld */,
-				350205DE28E3EC51005B77FA /* Network.swift */,
-				350205D328E3E96E005B77FA /* Assets.xcassets */,
-				350205D528E3E96E005B77FA /* LaunchScreen.storyboard */,
-				350205D828E3E96E005B77FA /* Info.plist */,
+				3560446828E4B8B200126372 /* Delegate */,
+				3560446928E4B8D000126372 /* Controllers */,
+				3560446A28E4B8EE00126372 /* Model */,
+				3560446B28E4B90600126372 /* Storyboard and Assets */,
+				3560446C28E4B92500126372 /* Supporting files */,
 			);
 			path = Animals;
+			sourceTree = "<group>";
+		};
+		3560446828E4B8B200126372 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				350205CA28E3E96B005B77FA /* AppDelegate.swift */,
+				350205CC28E3E96B005B77FA /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		3560446928E4B8D000126372 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				350205CE28E3E96B005B77FA /* ViewController.swift */,
+				350205E428E42435005B77FA /* TableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3560446A28E4B8EE00126372 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3502060328E44666005B77FA /* Animal.swift */,
+				350205E028E3ECB2005B77FA /* AnimalsModel.swift */,
+				350205DE28E3EC51005B77FA /* Network.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3560446B28E4B90600126372 /* Storyboard and Assets */ = {
+			isa = PBXGroup;
+			children = (
+				350205D028E3E96B005B77FA /* Main.storyboard */,
+				350205D328E3E96E005B77FA /* Assets.xcassets */,
+				350205D528E3E96E005B77FA /* LaunchScreen.storyboard */,
+			);
+			path = "Storyboard and Assets";
+			sourceTree = "<group>";
+		};
+		3560446C28E4B92500126372 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				350205F128E425B7005B77FA /* AnimalCoreData.swift */,
+				3560446628E4971800126372 /* TableViewCell.swift */,
+				350205E628E42462005B77FA /* AnimalDataStack.xcdatamodeld */,
+				350205D828E3E96E005B77FA /* Info.plist */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 		C13D69FAC05A40EF6F115742 /* Frameworks */ = {
@@ -229,6 +272,7 @@
 				350205E828E42462005B77FA /* AnimalDataStack.xcdatamodeld in Sources */,
 				350205E528E42435005B77FA /* TableViewController.swift in Sources */,
 				350205F228E425B7005B77FA /* AnimalCoreData.swift in Sources */,
+				3560446728E4971800126372 /* TableViewCell.swift in Sources */,
 				350205CB28E3E96B005B77FA /* AppDelegate.swift in Sources */,
 				350205DF28E3EC51005B77FA /* Network.swift in Sources */,
 				350205E128E3ECB2005B77FA /* AnimalsModel.swift in Sources */,

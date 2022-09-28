@@ -32,18 +32,18 @@ class ViewController: UIViewController {
     
     private func fetch() {
         Network.fetch(url: apiURL) { [weak self] animal in
-            DispatchQueue.main.async { [self] in
-                self!.titleAnimal.text = animal.name
-                self!.nameLatin.text = animal.latinName
-                self!.geoRangeLabel.text = animal.geoRange
-                self!.dietLabel.text = animal.diet
-                self!.lenghtMinLabel.text = animal.lengthMin
-                self!.lenghtMaxLabel.text = animal.lengthMax
+            DispatchQueue.main.async {
+                self?.titleAnimal.text = animal.name
+                self?.nameLatin.text = animal.latinName
+                self?.geoRangeLabel.text = animal.geoRange
+                self?.dietLabel.text = animal.diet
+                self?.lenghtMinLabel.text = animal.lengthMin
+                self?.lenghtMaxLabel.text = animal.lengthMax
                 
                 
                 let url = URL(string: animal.imageLink!)
-                self!.animalImage.kf.indicatorType = .activity
-                self!.animalImage.kf.setImage(with: url, options: [.transition(.fade(0.4)),
+                self?.animalImage.kf.indicatorType = .activity
+                self?.animalImage.kf.setImage(with: url, options: [.transition(.fade(0.4)),
                                                                    .processor(DownsamplingImageProcessor(size: self!.animalImage.frame.size)),
                                                                    .cacheOriginalImage])
             }
