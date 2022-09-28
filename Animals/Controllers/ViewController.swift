@@ -7,14 +7,10 @@
 
 import UIKit
 import Kingfisher
-import CoreData
 
 @available(iOS 13.0, *)
 class ViewController: UIViewController {
-
     private let apiURL = "https://zoo-animal-api.herokuapp.com/animals/rand"
-    private let model = [AnimalsModel]()
-    var context: NSManagedObjectContext!
     
     @IBOutlet weak var animalImage: UIImageView!
     @IBOutlet weak var titleAnimal: UILabel!
@@ -27,30 +23,33 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchedPressButton(buttonOut as Any)
+        searchedPressButton(buttonOut)
     }
     
     private func fetch() {
         Network.fetch(url: apiURL) { [weak self] animal in
             DispatchQueue.main.async {
-                self?.titleAnimal.text = animal.name
-                self?.nameLatin.text = animal.latinName
-                self?.geoRangeLabel.text = animal.geoRange
-                self?.dietLabel.text = animal.diet
-                self?.lenghtMinLabel.text = animal.lengthMin
-                self?.lenghtMaxLabel.text = animal.lengthMax
+                guard let self = self else {
+                    return
+                }
                 
+                self.titleAnimal.text = animal.name
+                self.nameLatin.text = animal.latinName
+                self.geoRangeLabel.text = animal.geoRange
+                self.dietLabel.text = animal.diet
+                self.lenghtMinLabel.text = animal.lengthMin
+                self.lenghtMaxLabel.text = animal.lengthMax
                 
                 let url = URL(string: animal.imageLink!)
-                self?.animalImage.kf.indicatorType = .activity
-                self?.animalImage.kf.setImage(with: url, options: [.transition(.fade(0.4)),
-                                                                   .processor(DownsamplingImageProcessor(size: self!.animalImage.frame.size)),
-                                                                   .cacheOriginalImage])
+                self.animalImage.kf.indicatorType = .activity
+                self.animalImage.kf.setImage(with: url, options: [.transition(.fade(0.4)),
+                                                                  .processor(DownsamplingImageProcessor(size: self.animalImage.frame.size)),
+                                                                  .cacheOriginalImage])
             }
         }
     }
-
-    @IBAction func searchedPressButton(_ sender: Any) {
+    
+    @IBAction func searchedPressButton(_ sender: UIButton) {
         fetch()
     }
 }

@@ -5,11 +5,7 @@
 //  Created by Илья Сутормин on 28.09.2022.
 //
 
-import Foundation
-import CoreData
-
 struct AnimalsModel: Codable {
-    
     let name: String?
     let latinName: String?
     let lengthMin: String?
@@ -19,14 +15,12 @@ struct AnimalsModel: Codable {
     let imageLink: String?
     
     enum CodingKeys: String, CodingKey {
-            case name
-            case latinName = "latin_name"
-            case lengthMin = "length_min"
-            case lengthMax = "length_max"
-            case diet
-            case geoRange = "geo_range"
-            case imageLink = "image_link"
-            
-        }
-
+        case name, diet
+        case latinName = "latin_name"
+        case lengthMin = "length_min"
+        case lengthMax = "length_max"
+        case geoRange = "geo_range"
+        case imageLink = "image_link"
+    }
+    
 }
