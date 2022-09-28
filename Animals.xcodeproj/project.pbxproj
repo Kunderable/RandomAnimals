@@ -77,6 +77,7 @@
 		350205C928E3E96B005B77FA /* Animals */ = {
 			isa = PBXGroup;
 			children = (
+				350205D828E3E96E005B77FA /* Info.plist */,
 				3560446828E4B8B200126372 /* Delegate */,
 				3560446928E4B8D000126372 /* Controllers */,
 				3560446A28E4B8EE00126372 /* Model */,
@@ -130,7 +131,6 @@
 				350205F128E425B7005B77FA /* AnimalCoreData.swift */,
 				3560446628E4971800126372 /* TableViewCell.swift */,
 				350205E628E42462005B77FA /* AnimalDataStack.xcdatamodeld */,
-				350205D828E3E96E005B77FA /* Info.plist */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
