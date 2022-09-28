@@ -200,7 +200,13 @@
                             <constraint firstItem="zV0-k0-sp0" firstAttribute="top" secondItem="1Rv-Xk-O5T" secondAttribute="bottom" constant="165" id="wQC-nA-jbp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="POJ-eQ-Cac"/>
+                    <navigationItem key="navigationItem" id="POJ-eQ-Cac">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="JDE-cI-SNI">
+                            <connections>
+                                <segue destination="wxi-aL-fOS" kind="show" id="SBl-9I-9vy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="animalImage" destination="Fq5-K7-Dt9" id="bww-p9-4cN"/>
                         <outlet property="buttonOut" destination="zV0-k0-sp0" id="ejf-Nd-EEB"/>
@@ -215,6 +221,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1783.0769230769231" y="3.5545023696682461"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="GGF-oC-yLW">
+            <objects>
+                <tableViewController id="wxi-aL-fOS" customClass="TableViewController" customModule="Animals" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="VGy-BA-12h">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="aiE-4A-5N8">
+                                <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aiE-4A-5N8" id="XXh-Nt-STJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wxi-aL-fOS" id="HGt-5n-HAG"/>
+                            <outlet property="delegate" destination="wxi-aL-fOS" id="m8e-U4-ogv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="vod-lS-oMp"/>
+                    <connections>
+                        <outlet property="tableVie" destination="VGy-BA-12h" id="g5s-hP-7WJ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgN-B6-oUM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2496" y="18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9vv-6w-KuG">

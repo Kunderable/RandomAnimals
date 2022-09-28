@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct AnimalsModel: Codable {
     
@@ -27,4 +28,5 @@ struct AnimalsModel: Codable {
             case imageLink = "image_link"
             
         }
+
 }

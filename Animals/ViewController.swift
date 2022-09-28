@@ -7,11 +7,14 @@
 
 import UIKit
 import Kingfisher
+import CoreData
 
+@available(iOS 13.0, *)
 class ViewController: UIViewController {
 
     private let apiURL = "https://zoo-animal-api.herokuapp.com/animals/rand"
     private let model = [AnimalsModel]()
+    var context: NSManagedObjectContext!
     
     @IBOutlet weak var animalImage: UIImageView!
     @IBOutlet weak var titleAnimal: UILabel!
